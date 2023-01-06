@@ -88,9 +88,19 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-// Function to prompt user for password options
-function getPasswordOptions() {
+userLength = prompt("how many characters would you like?")
 
+
+
+
+
+
+
+
+
+
+// Function to prompt user for password options
+function getPasswordOptions(digitLength) {
 }
 
 // Function for getting a random element from an array
