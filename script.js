@@ -88,12 +88,21 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-userLength = prompt("how many characters would you like?")
+function getNumber(number) {
+var number = prompt("choose a length for your password between 10-64")
+number = parseInt(number);
 
+if (number >= 10 && number <= 64) {
 
+  alert("Thank you for entering a valid number!");
+} else {
 
+  alert("Error: please enter a number between 10-64.");
+  getNumber();
+}
+}
 
-
+getNumber()
 
 
 
