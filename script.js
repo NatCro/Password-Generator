@@ -88,6 +88,7 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+finalPassword = []
 
 // Function to prompt user for password options
 
@@ -105,13 +106,25 @@ if (digitLength >= 10 && digitLength <= 64) {
 }
 }
 
+// Funtion that adds upper case letters into the var finalPassword
+
+function chooseUpper(upperLetter) {
+  var upperLetter = confirm("would you like uppercase letters in your password?");
+    if (upperLetter == true) {
+      finalPassword.push(...upperCasedCharacters);
+      alert("Uppercase letters will be added to the password");
+    } else {
+      alert("uppercase letters will not be added");
+    }
+    }
+  
+
+
 getPasswordOptions()
 
+chooseUpper()
 
-
-
-
-
+console.log(finalPassword)
 
 
 // Function for getting a random element from an array
