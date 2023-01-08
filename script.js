@@ -88,13 +88,16 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-function getNumber(number) {
-var number = prompt("choose a length for your password between 10-64")
-number = parseInt(number);
 
-if (number >= 10 && number <= 64) {
+// Function to prompt user for password options
 
-  alert("Thank you for entering a valid number!");
+function getPasswordOptions(digitLength) {
+var digitLength = prompt("choose a length for your password between 10-64")
+digitLength = parseInt(digitLength);
+
+if (digitLength >= 10 && digitLength <= 64) {
+
+  alert(digitLength + " has been selected for the length");
 } else {
 
   alert("Error: please enter a number between 10-64.");
@@ -102,15 +105,14 @@ if (number >= 10 && number <= 64) {
 }
 }
 
-getNumber()
+getPasswordOptions()
 
 
 
 
 
-// Function to prompt user for password options
-function getPasswordOptions(digitLength) {
-}
+
+
 
 // Function for getting a random element from an array
 function getRandom(arr) {
