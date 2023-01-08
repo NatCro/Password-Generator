@@ -118,6 +118,9 @@ function chooseUpper(upperLetter) {
     }
     }
   
+
+// Funtion that adds lower case letters into the var finalPassword
+
     function chooseLower(lowerLetter) {
       var lowerLetter = confirm("would you like lowercase letters in your password?");
         if (lowerLetter == true) {
@@ -129,12 +132,27 @@ function chooseUpper(upperLetter) {
         }
 
 
+// Funtion that adds lower case letters into the var finalPassword
+
+function chooseSpecial(specialLetter) {
+  var specialLetter = confirm("would you like Special characters in your password?");
+    if (specialLetter == true) {
+      finalPassword.push(...specialCharacters);
+      alert("Special characters will be added to the password");
+    } else {
+      alert("Special characters will not be added");
+    }
+    }
+
+
 
 getPasswordOptions()
 
 chooseUpper()
 
 chooseLower()
+
+chooseSpecial()
 
 console.log(finalPassword)
 
