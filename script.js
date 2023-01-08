@@ -145,6 +145,13 @@ function chooseSpecial(specialLetter) {
     }
 
 
+    //function to shuffle the array
+
+    function shuffle(array) {
+      return array.sort(() => Math.random() - 0.5);
+    }
+    
+
 
 getPasswordOptions()
 
@@ -154,7 +161,10 @@ chooseLower()
 
 chooseSpecial()
 
+shuffle(finalPassword)
+
 console.log(finalPassword)
+
 
 
 // Function for getting a random element from an array
