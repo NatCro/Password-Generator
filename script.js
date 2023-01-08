@@ -148,6 +148,17 @@ function chooseSpecial(specialLetter) {
   }
 }
 
+// Funtion that adds number letters into the var finalPassword
+
+function chooseNumber(numberChar) {
+  var numberChar = confirm("would you like numbers in your password?");
+  if (numberChar == true) {
+    finalPassword.push(...numericCharacters);
+    alert("Numbers will be added to the password");
+  } else {
+    alert("Numbers will not be added");
+  }
+}
 
 //function to shuffle the array
 
@@ -156,13 +167,13 @@ function shuffle(array) {
 }
 
 
-
-
 chooseUpper()
 
 chooseLower()
 
 chooseSpecial()
+
+chooseNumber()
 
 shuffle(finalPassword)
 
