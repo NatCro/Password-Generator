@@ -88,72 +88,75 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-finalPassword = []
+var finalPassword = []
+
+
+var digitLength = getPasswordOptions()
 
 // Function to prompt user for password options
 
-function getPasswordOptions(digitLength) {
-var digitLength = prompt("choose a length for your password between 10-64")
-digitLength = parseInt(digitLength);
+function getPasswordOptions() {
+  x = prompt("choose a length for your password between 10-64")
+  x = parseInt(x);
 
-if (digitLength >= 10 && digitLength <= 64) {
+  if (x >= 10 && x <= 64) {
 
-  alert(digitLength + " has been selected for the length");
-} else {
+    alert(x + " has been selected for the length");
+  } else {
 
-  alert("Error: please enter a number between 10-64.");
-  getNumber();
+    alert("Error: please enter a number between 10-64.");
+  } 
+  return x
 }
-}
+
 
 // Funtion that adds upper case letters into the var finalPassword
 
 function chooseUpper(upperLetter) {
   var upperLetter = confirm("would you like uppercase letters in your password?");
-    if (upperLetter == true) {
-      finalPassword.push(...upperCasedCharacters);
-      alert("Uppercase letters will be added to the password");
-    } else {
-      alert("uppercase letters will not be added");
-    }
-    }
-  
+  if (upperLetter == true) {
+    finalPassword.push(...upperCasedCharacters);
+    alert("Uppercase letters will be added to the password");
+  } else {
+    alert("uppercase letters will not be added");
+  }
+}
+
 
 // Funtion that adds lower case letters into the var finalPassword
 
-    function chooseLower(lowerLetter) {
-      var lowerLetter = confirm("would you like lowercase letters in your password?");
-        if (lowerLetter == true) {
-          finalPassword.push(...lowerCasedCharacters);
-          alert("Lowercase letters will be added to the password");
-        } else {
-          alert("lowercase letters will not be added");
-        }
-        }
+function chooseLower(lowerLetter) {
+  var lowerLetter = confirm("would you like lowercase letters in your password?");
+  if (lowerLetter == true) {
+    finalPassword.push(...lowerCasedCharacters);
+    alert("Lowercase letters will be added to the password");
+  } else {
+    alert("lowercase letters will not be added");
+  }
+}
 
 
 // Funtion that adds lower case letters into the var finalPassword
 
 function chooseSpecial(specialLetter) {
   var specialLetter = confirm("would you like Special characters in your password?");
-    if (specialLetter == true) {
-      finalPassword.push(...specialCharacters);
-      alert("Special characters will be added to the password");
-    } else {
-      alert("Special characters will not be added");
-    }
-    }
+  if (specialLetter == true) {
+    finalPassword.push(...specialCharacters);
+    alert("Special characters will be added to the password");
+  } else {
+    alert("Special characters will not be added");
+  }
+}
 
 
-    //function to shuffle the array
+//function to shuffle the array
 
-    function shuffle(array) {
-      return array.sort(() => Math.random() - 0.5);
-    }
-    
+function shuffle(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
 
 
-getPasswordOptions()
+
 
 chooseUpper()
 
@@ -165,7 +168,7 @@ shuffle(finalPassword)
 
 console.log(finalPassword)
 
-
+console.log(digitLength)
 
 // Function for getting a random element from an array
 function getRandom(arr) {
