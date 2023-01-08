@@ -118,11 +118,23 @@ function chooseUpper(upperLetter) {
     }
     }
   
+    function chooseLower(lowerLetter) {
+      var lowerLetter = confirm("would you like lowercase letters in your password?");
+        if (lowerLetter == true) {
+          finalPassword.push(...lowerCasedCharacters);
+          alert("Lowercase letters will be added to the password");
+        } else {
+          alert("lowercase letters will not be added");
+        }
+        }
+
 
 
 getPasswordOptions()
 
 chooseUpper()
+
+chooseLower()
 
 console.log(finalPassword)
 
