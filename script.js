@@ -170,34 +170,43 @@ function shuffle(array) {
 }
 
 
+var upper 
+
+var lower 
+
+var special
+
+var number 
+
+var userPassword 
+
 // running the script
+function generatePassword() {
 
-var upper = chooseUpper()
+ upper = chooseUpper();
 
-var lower = chooseLower()
+ lower = chooseLower();
 
-var special = chooseSpecial()
+ special = chooseSpecial();
 
-var number = chooseNumber()
+ number = chooseNumber();
 
+shuffle(finalPassword);
 
+getRandom(finalPassword);
 
-shuffle(finalPassword)
+ userPassword = pendingPassword(digitLength);
 
-console.log(finalPassword)
+checkParameters(upper, upperCasedCharacters);
 
-getRandom(finalPassword)
+checkParameters(lower, lowerCasedCharacters);
 
-var userPassword = generatePassword(digitLength)
+checkParameters(special, specialCharacters);
 
-checkParameters(upper, upperCasedCharacters)
+checkParameters(number, numericCharacters);
 
-checkParameters(lower, lowerCasedCharacters)
-
-checkParameters(special, specialCharacters)
-
-checkParameters(number, numericCharacters)
-
+return userPassword;
+}
 
 
 // make the array print to the length of the selected code using a random number generator
@@ -211,7 +220,7 @@ function getRandom(arr) {
 // using the above function x amount of times depending on what the user has selected
 // Function to generate password with user input
 
-function generatePassword(n) {
+function pendingPassword(n) {
   var userPassword = [];
   for (let i = 0; i < n; i++) {
   y = getRandom(finalPassword);
@@ -226,42 +235,11 @@ function checkParameters(check, characters) {
   if (check == true) {
     for (let i = 0; i < characters.length; i++) { 
       if (userPassword.includes(characters[i] == false)){
-        return generatePassword(digitLength)
+        return pendingPassword(digitLength)
       } 
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
