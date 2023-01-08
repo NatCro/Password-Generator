@@ -167,6 +167,8 @@ function shuffle(array) {
 }
 
 
+// running the script
+
 chooseUpper()
 
 chooseLower()
@@ -181,9 +183,15 @@ console.log(finalPassword)
 
 console.log(digitLength)
 
+getRandom(finalPassword)
+
+
+// make the array print to the length of the selected code using a random number generator
+
 // Function for getting a random element from an array
 function getRandom(arr) {
-
+  x = arr[Math.floor(Math.random() * arr.length)];
+  return x
 }
 
 // Function to generate password with user input
