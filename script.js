@@ -90,7 +90,6 @@ var upperCasedCharacters = [
 
 var finalPassword = []
 
-
 var digitLength = getPasswordOptions()
 
 // Function to prompt user for password options
@@ -112,7 +111,7 @@ function getPasswordOptions() {
 
 // Funtion that adds upper case letters into the var finalPassword
 
-function chooseUpper(upperLetter) {
+function chooseUpper() {
   var upperLetter = confirm("would you like uppercase letters in your password?");
   if (upperLetter == true) {
     finalPassword.push(...upperCasedCharacters);
@@ -120,12 +119,13 @@ function chooseUpper(upperLetter) {
   } else {
     alert("uppercase letters will not be added");
   }
+  return upperLetter
 }
 
 
 // Funtion that adds lower case letters into the var finalPassword
 
-function chooseLower(lowerLetter) {
+function chooseLower() {
   var lowerLetter = confirm("would you like lowercase letters in your password?");
   if (lowerLetter == true) {
     finalPassword.push(...lowerCasedCharacters);
@@ -133,12 +133,13 @@ function chooseLower(lowerLetter) {
   } else {
     alert("lowercase letters will not be added");
   }
+  return lowerLetter
 }
 
 
 // Funtion that adds lower case letters into the var finalPassword
 
-function chooseSpecial(specialLetter) {
+function chooseSpecial() {
   var specialLetter = confirm("would you like Special characters in your password?");
   if (specialLetter == true) {
     finalPassword.push(...specialCharacters);
@@ -146,11 +147,12 @@ function chooseSpecial(specialLetter) {
   } else {
     alert("Special characters will not be added");
   }
+  return specialLetter
 }
 
 // Funtion that adds number letters into the var finalPassword
 
-function chooseNumber(numberChar) {
+function chooseNumber() {
   var numberChar = confirm("would you like numbers in your password?");
   if (numberChar == true) {
     finalPassword.push(...numericCharacters);
@@ -158,6 +160,7 @@ function chooseNumber(numberChar) {
   } else {
     alert("Numbers will not be added");
   }
+  return numberChar
 }
 
 //function to shuffle the array
@@ -169,21 +172,32 @@ function shuffle(array) {
 
 // running the script
 
-chooseUpper()
+var upper = chooseUpper()
 
-chooseLower()
+var lower = chooseLower()
 
-chooseSpecial()
+var special = chooseSpecial()
 
-chooseNumber()
+var number = chooseNumber()
+
+
 
 shuffle(finalPassword)
 
 console.log(finalPassword)
 
-console.log(digitLength)
-
 getRandom(finalPassword)
+
+var userPassword = generatePassword(digitLength)
+
+checkParameters(upper, upperCasedCharacters)
+
+checkParameters(lower, lowerCasedCharacters)
+
+checkParameters(special, specialCharacters)
+
+checkParameters(number, numericCharacters)
+
 
 
 // make the array print to the length of the selected code using a random number generator
@@ -194,10 +208,64 @@ function getRandom(arr) {
   return x
 }
 
+// using the above function x amount of times depending on what the user has selected
 // Function to generate password with user input
-function generatePassword() {
 
+function generatePassword(n) {
+  var userPassword = [];
+  for (let i = 0; i < n; i++) {
+  y = getRandom(finalPassword);
+   userPassword.push(y);  
+  }
+ console.log(userPassword.join(""))
+ return userPassword
 }
+
+function checkParameters(check, characters) {
+ 
+  if (check == true) {
+    for (let i = 0; i < characters.length; i++) { 
+      if (userPassword.includes(characters[i] == false)){
+        return generatePassword(digitLength)
+      } 
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
